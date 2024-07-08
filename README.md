@@ -1,11 +1,8 @@
-Необходимо создать компонент Card.jsx который:
+# React + Vite
 
-1. Будет возвращать следующую структуру — [ссылка](https://github.com/junjun-it-courses/react-hw/blob/master/task-2.html)
-компонент повинен бути класовий
-2. Компонент принимает 2 пропса title и text
-3. Необходимо принять их в компоненте и отрендерить в соответствующих местах
-4. Если какого-то пропса не хватает (не был передан в компонент), то не рендерим html код который его оборачивает
-5. Подключить компонент в App.js и отрендерить 3 раза (передавая пропсы по очереди)
-5.1 При первом рендере передаем только title
-5.2 При втором только text
-5.3 При третьем оба пропса
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
