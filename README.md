@@ -1,8 +1,9 @@
-# React + Vite
+Реализуйте компонент, эмулирующий работу слайдера. Компонент принимает на вход свойство images, в котором находится список путей до картинок. Компонент отображает их и позволяет с помощью стрелок «вперёд» и «назад» осуществлять переход по ним. Сам переход зациклен. Картинки (пути до них) могут повторятся.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ниже описано поведение:
 
-Currently, two official plugins are available:
+Если выбрана последняя картинка, то next ведёт на первую. То же самое происходит и prev, но в обратную сторону.
+Первая картинка становится активной. Порядок картинок и их отображение должны сохраняться.
+Начальная вёрстка с данными, которые прогружаются в файле — [layout.html](https://github.com/junjun-it-courses/react-hw/blob/master/task-8/layout.html)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Хотя вёрстка и не тривиальная, единственное, что меняется в ней — класс active.
