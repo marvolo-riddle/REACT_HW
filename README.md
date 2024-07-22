@@ -1,8 +1,18 @@
-# React + Vite
+Реализуйте компонент <MyForm>, отображающий форму из шести элементов:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+email – инпут типа email
+password – инпут типа password
+address – textarea
+city – текстовый инпут
+country – select со следующими значениями: argentina, russia, china.
+Accept Rules – checkbox булево значение должно быть приведено к строке
+После сабмита формы появляется таблица, в которой показываются значения всех полей. Из этой формы можно вернуться в редактирование по кнопке Back. При этом все данные должны оказаться на своих местах.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Форма — [layout.html](https://github.com/junjun-it-courses/react-hw/blob/master/task-10/layout.html)
+
+После отправки формы — [layout2.html](https://github.com/junjun-it-courses/react-hw/blob/master/task-10/layout2.html)
+
+
+Строки сортируются в алфавитном порядке по именам в первом столбце. В вашем случае результирующая таблица может отличаться, все зависит от того, какие данные выбраны.
