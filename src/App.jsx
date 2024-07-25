@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import React from "react";
+import Buttons from "./components/Buttons";
+import Log from "./components/Log";
 
-function App() {
-  const [count, setCount] = useState(0)
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      entries: [],
+    };
+    this.incrementLog = this.incrementLog.bind(this);
+    this.decrementLog = this.decrementLog.bind(this);
+  }
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+  incrementLog() {
+    this.setState((prevState) => {
+      const lastValue =
+        prevState.entries.length > 0
+          ? prevState.entries[prevState.entries.length - 1]
+          : 0;
+      const newValue = lastValue + 1;
+      return { entries: [...prevState.entries, newValue] };
+    });
+  }
+
+  decrementLog() {
+    this.setState((prevState) => {
+      const lastValue =
+        prevState.entries.length > 0
+          ? prevState.entries[prevState.entries.length - 1]
+          : 0;
+      const newValue = lastValue === 0 ? 0 : lastValue - 1;
+      return { entries: [...prevState.entries, newValue] };
+    });
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <Buttons
+          decrement={this.decrementLog}
+          increment={this.incrementLog}
+        ></Buttons>
+        <Log entries={this.state.entries}></Log>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
+  }
 }
 
-export default App
+export default App;

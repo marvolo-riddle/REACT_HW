@@ -1,8 +1,14 @@
-# React + Vite
+Реализуйте компонент, который представляет собой две кнопки и лог событий:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Лог — это список значений, каждое из которых получается после нажатия на одну из двух кнопок. Снизу находятся более старые события, сверху новые.
+Левая кнопка + добавляет в лог строчку с новым значением равным: значение «самой новой существующей записи лога» + 1
+Правая кнопка - добавляет в лог строчку с новым значением равным: значение «самой новой существующей записи лога» — 1
+При клике на запись в логе она удаляется.
 
-Currently, two official plugins are available:
+Начальный HTML —  [layout.html](https://github.com/junjun-it-courses/react-hw/blob/master/task-10.1/layout.html)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+После нажатия последовательности +, +, -, +:  [layout2.html](https://github.com/junjun-it-courses/react-hw/blob/master/task-10.1/layout2.html)
+
+
+
+Каждое нажатие кнопки добавляет в лог новую строчку сверху.
