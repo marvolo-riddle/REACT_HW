@@ -1,35 +1,69 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import "./App.css";
+import uniqueId from "lodash/uniqueId";
+import Input from "./components/Input.jsx";
+import Items from "./components/Items.jsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      inputValue: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onItemClick = this.onItemClick.bind(this);
+  }
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+  handleChange(event) {
+    const { value } = event.target;
+    this.setState({ ...this.state, inputValue: value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const { inputValue } = this.state;
+
+    if (inputValue.trim() === "") {
+      return;
+    }
+    const item = {
+      id: uniqueId("item_"),
+      value: inputValue,
+    };
+    this.setState((prevState) => ({
+      items: [...prevState.items, item],
+      inputValue: "",
+    }));
+  }
+
+  onItemClick(id) {
+    const { items } = this.state;
+    const newItems = items.filter((item) => item.id !== id);
+    this.setState({ items: newItems, inputValue: "" });
+  }
+
+  render() {
+    const { items } = this.state;
+    return (
+      <div className="App">
+        <Input
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          inputValue={this.state.inputValue}
+        ></Input>
+        <div className="items">
+          {items.length > 0 ? (
+            <Items
+              items={this.state.items}
+              onItemClick={this.onItemClick}
+            ></Items>
+          ) : null}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
+  }
 }
 
-export default App
+export default App;
