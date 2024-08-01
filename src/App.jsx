@@ -7,12 +7,7 @@ class App extends React.Component {
       console.log(content);
     };
 
-    return (
-      <div className="editor">
-        {" "}
-        <MarkdownEditor onContentChange={onContentChange}></MarkdownEditor>
-      </div>
-    );
+    return <MarkdownEditor onContentChange={onContentChange}></MarkdownEditor>;
   }
 }
 
