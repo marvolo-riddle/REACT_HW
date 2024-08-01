@@ -1,8 +1,8 @@
-# React + Vite
+Реализуйте компонент <MarkdownEditor />, который является React оберткой плагина [@toast-ui/editor](https://github.com/nhn/tui.editor/tree/master/apps/editor). Этот плагин позволяет встроить в страницу Markdown-редактор.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+использование — [script.js](https://github.com/junjun-it-courses/react-hw/blob/master/task-15/script.js)
 
-Currently, two official plugins are available:
+Компонент принимает на вход функцию как свойство onContentChange, которая вызывается при каждом изменении в редакторе. Функция принимает на вход содержимое редактора. Его использование видно в файле src/index.jsx.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://github.com/junjun-it-courses/react-hw/blob/master/task-15/index.jsx
+
