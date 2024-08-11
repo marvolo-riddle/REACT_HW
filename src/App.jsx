@@ -10,12 +10,8 @@ function App() {
 
   const handleChange = (event) => {
     const { value } = event.target;
-    setInputValue(value); // Устанавливаем значение поля ввода как новое состояние
+    setInputValue(value);
   };
-  // const handleChange = (event) => {
-  //   const { value } = event.target;
-  //   setInputValue((prevValue) => prevValue + value);
-  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
