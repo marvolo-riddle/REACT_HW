@@ -1,8 +1,7 @@
-# React + Vite
+Реализуйте компонент <PostCatalog />, который представляет собой вывод статей полученных из внешнего сервера
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Список постов можно получить сделав запрос на сервер — [script.js](https://github.com/junjun-it-courses/react-hw/blob/master/task-14/script.js)
 
-Currently, two official plugins are available:
+Структура на которую вы должны получить на выходе — [layout.html](https://github.com/junjun-it-courses/react-hw/blob/master/task-14/layout.html)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Каждый следующий **li** это отдельный пост
