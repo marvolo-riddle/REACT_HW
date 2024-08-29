@@ -1,8 +1,38 @@
-# React + Vite
+Вам потрібно написати **todoList** такий як ми писали на уроці але з доп функціоналом
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Технології**
+Material UI 
+Formik 
+PropTypes
+react-router
+Yup
+css-modules
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+**Опис**
+
+Головна сторінка
+
+Форма для створення
+Список елементів
+всі дані проходять через localStorage
+Можливість видалення todo-item
+Можливість перегляду todo-item
+Можливість зміни стану todo-item (completed, not-completed, pending) (select)
+Сторінка todo-item
+
+При перегляді todo-item ви переходите на окрему сторінку, на якій є змога:
+
+Видаляти поточний елемент
+Змінювати стан todo-item (select)
+редагувати title та description
+Всі зміни прозодять через localStorage
+Після видалення користувача кидає на головну сторінку
+
+Після редагування юзер баче вспливаюче повиідомлення про успішне редагування
+
+
+**Сторінка всіх todo**
+
+Просто список всіх todo-items в корі є в localStorage, з можливістю переходу на кожен окремий, але без можливості редагування на цій сторінці.
