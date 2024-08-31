@@ -1,33 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { storageWorker } from "../../utils/StorageWorker.jsx";
+import storageWorker from "../../utils/StorageWorker.jsx";
 
 const addContact = (state, action) => {
   const newItem = storageWorker.saveItem(action.payload);
   state.contacts.push(newItem);
-}; //добавить в событие onSubmit
+};
 
 const removeContact = (state, action) => {
   const removedItem = storageWorker.deleteItem(action.payload);
-  state.contacts = state.contacts.filter((item) => item.id !== removedItem.id);
-}; // добавить в событие на кнопку
+  state.contacts = state.contacts.filter((item) => item.id !== removedItem);
+};
 
 const editContact = (state, action) => {
-  const newData = storageWorker.changeItem(action.payload);
+  const { id, updatedValues } = action.payload;
+  const newData = storageWorker.changeItem(id, updatedValues);
   state.contacts = newData;
-};
+}; //решение запомнить!!
+
+const initialState = storageWorker.getData();
 
 export const ContactsSlice = createSlice({
   name: "contacts",
-  initialState: { contacts: [] },
+  initialState: { contacts: initialState },
   reducers: {
     addData: addContact,
     deleteData: removeContact,
     editData: editContact,
-    showData: {},
   },
 });
 
-export const { addData, deleteData, editData, showData } =
-  ContactsSlice.actions;
+export const { addData, deleteData, editData } = ContactsSlice.actions;
 
 export default ContactsSlice.reducer;

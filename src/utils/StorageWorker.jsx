@@ -37,11 +37,10 @@ export class StorageWorker {
 
   deleteItem = (id) => {
     const data = this.getData();
-    const findItem = data.findIndex((element) => element.id === id);
-    data.splice(findItem, 1);
-    localStorage.setItem(this.#key, JSON.stringify(data));
-    if (data.length === 0) this.resetID();
-    return findItem;
+    const updatedData = data.filter((item) => item.id !== id);
+    localStorage.setItem(this.#key, JSON.stringify(updatedData));
+    if (updatedData.length === 0) this.resetID();
+    return id;
   };
 
   showItem = (id) => {

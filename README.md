@@ -1,8 +1,9 @@
-# React + Vite
+Створи простий додаток, який дозволяє додавати, видаляти, редагувати та переглядати контакти. Стан додатка повинен зберігатися та управлятися за допомогою Redux. Без використання асинхронних дій, всі операції повинні бути синхронними CRUD (Create, Read, Update, Delete).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Стек**
+React
+react-router
+redux
+mui
+prop-types
+classnames
