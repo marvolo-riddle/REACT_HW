@@ -63,17 +63,21 @@ export default UserProfile;
 </Route>
 
 // 7 фрагмент
+<Link to={`/user/${id}/info`}>Iнформацiя</Link>
+
+// 8 фрагмент
 import { useNavigate } from 'react-router-dom';
 
 const navigate = useNavigate();
 navigate(`/user/${id}/info`);
 
-// 8 фрагмент
-<Link to={`/user/${id}/info`}>Інформація</Link>
 
 // 9 фрагмент
 navigate(`/user/${id}/info`, { state: { fromDashboard: true } });
 
 // 10 фрагмент
+import { useLocation } from 'react-router-dom';
+
 const location = useLocation();
-console.log(location.state);
+console.log(location.state); // { fromDashboard: true }
+
